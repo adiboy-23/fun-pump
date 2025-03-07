@@ -3,12 +3,10 @@
   --foreground: #ededed;
 }
 
-html,
-body {
+html,body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -16,13 +14,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
 h1,
 h2,
 h3 {
@@ -58,7 +54,7 @@ header .brand {
 
 /* BUTTON STYLES */
 
-.btn--fancy,
+button,
 input[type="submit"] {
   font-family: "Nabla";
   font-size: 1.5rem;
@@ -71,15 +67,15 @@ input[type="submit"] {
   transition: 250ms ease all;
 }
 
-header .btn--fancy {
+header button {
   transform: rotate(5deg);
 }
 
-main .create .btn--fancy {
+main .create button {
   font-size: 2rem;
 }
 
-.btn--fancy:hover,
+button:hover,
 input[type="submit"]:hover {
   transform: scale(1.2);
 }
@@ -108,8 +104,8 @@ main .listings {
 }
 
 main .listings h1 {
-  font-family: "Arial";
-  font-weight: 800;
+  font-family: "Doto";
+  font-weight: 900;
   padding: 1em;
 }
 
@@ -118,71 +114,12 @@ main .listings h1 {
   grid-template-columns: repeat(auto-fill, minmax(400px, 0));
   gap: 1em;
   place-content: center;
-  text-align: center;
 }
-
-.tokens p {
-  grid-column: 1 / -1;
-  font-family: "Arial";
-  font-size: 1.50rem;
-}
-
-.token {
-  background: none;
-  border: 1px solid transparent;
-  color: var(--foreground);
-  padding: 1em;
-
-  font-size: 1.05rem;
-
-  cursor: pointer;
-}
-
-.token:nth-child(1) {
-  animation: blink forwards 5s ease infinite;
-}
-
-.token:hover {
-  border: 1px solid var(--foreground);
-}
-
-@keyframes blink {
-  0% {
-    background: yellow;
-    opacity: 0;
-  }
-
-  5% {
-    background: none;
-    opacity: 1;
-  }
-
-  95% {
-    background: none;
-    opacity: 1;
-  }
-
-  100% {
-    background: yellow;
-    opacity: 0;
-  }
-}
-
 .token__details {
-  font-family: "Arial";
-  font-weight: 400;
-  text-align: center;
-}
+  border: 1px solid var(--foreground);
 
-.token__details p {
-  font-size: 0.95rem;
-  text-transform: lowercase;
-  padding: 0.5em;
-  width: 100%;
-}
-
-.token__details .name {
-  font-size: 1.40rem;
+  font-family: "Doto";
+  font-weight: 600;
 }
 
 /* CREATE TOKEN FORM */
@@ -190,7 +127,7 @@ main .listings h1 {
 .list {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 
   position: fixed;
   top: 50%;
@@ -201,14 +138,6 @@ main .listings h1 {
   align-items: center;
   flex-direction: column;
   padding-top: 3em;
-}
-
-.list__description {
-  font-family: "Arial";
-  font-size: 1.10rem;
-  font-weight: 400;
-  text-transform: lowercase;
-  padding: 1em 0 0;
 }
 
 .list form {
@@ -220,60 +149,16 @@ main .listings h1 {
   padding: 2em;
 }
 
+.list form label {
+  font-size: 1.50rem;
+  font-weight: bold;
+}
+
 .list form input[type="text"] {
   background-color: var(--background);
   color: var(--foreground);
   border: none;
 
-  width: 200px;
-  padding: 1.50em;
-  border-radius: 6px;
-}
-
-/* TRADE TOKENS */
-.trade {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 3em;
-}
-
-.trade p {
-  font-family: "Arial";
-  font-size: 1.10rem;
-  text-transform: lowercase;
-}
-
-.trade .disclaimer {
-  font-size: 1.50rem;
-  font-weight: bold;
-  padding: 2em;
-}
-
-.trade form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2em;
-  padding: 2em;
-}
-
-.trade form input[type="number"] {
-  background-color: var(--background);
-  color: var(--foreground);
-  border: none;
-
-  width: 200px;
-  padding: 1.50em;
+  padding: 1em;
   border-radius: 6px;
 }

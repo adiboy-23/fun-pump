@@ -1,10 +1,8 @@
-import { ethers } from "ethers"
-
-function Header({ account, setAccount }) {
-
+function Header() {
   return (
     <header>
-
+      <p className="brand">Fun.Pump</p>
+      <button>[ CONNECT ]</button>
     </header>
   );
 }
